@@ -14,16 +14,17 @@ const Rating = ({ value, max, onChange }) => {
                         data-value={i+1}
                         key={i}
                         className={`btn ${i > (value - 1) && 'text-muted'}`}
-                        onClick={(e) => {
-                            const dataValue = +e.target.dataset.value;
-                            const returnedValue = value === dataValue ? value - 1 : dataValue;
+                            // seems like every map iteration + every rerender = new function
+                            onClick={(e) => {
+                                const dataValue = +e.target.dataset.value;
+                                const returnedValue = value === dataValue ? value - 1 : dataValue;
 
-                            onChange({
-                                target: {
-                                    value: returnedValue
-                                },
-                            });
-                        }}
+                                onChange({
+                                    target: {
+                                        value: returnedValue
+                                    },
+                                });
+                            }}
                     >
                         {starChar}
                     </div>
