@@ -12,6 +12,7 @@ const Rating = ({ value, max, onChange }) => {
                 .map((item, i) =>
                     <div
                         data-value={i+1}
+                        key={i}
                         className={`btn ${i > (value - 1) && 'text-muted'}`}
                         onClick={(e) => {
                             const dataValue = +e.target.dataset.value;

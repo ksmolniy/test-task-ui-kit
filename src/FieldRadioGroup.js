@@ -7,8 +7,8 @@ const FieldSelect = ({ label = '', options = [], value, ...input }) => {
         <div className="ml-2 d-flex flex-column">
             { 
                 options.map(item => 
-                    <label>
-                        <input value={item.value} key={item.value} checked={value === item.value} type="radio" {...input} />
+                    <label key={item.value}>
+                        <input value={item.value} checked={value === item.value} type="radio" {...input} />
                         {item.name}
                     </label>
                 )

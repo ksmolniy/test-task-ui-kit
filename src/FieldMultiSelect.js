@@ -16,8 +16,8 @@ function selectChanged(e, onChange) {
 const FieldMultiSelect = ({ label = '', value=[], options = [], onChange ,...input }) => {
     return <label>
         {label}
-        <select className="ml-2" multiple onChange={e => selectChanged(e,onChange)} {...input} >
-            { options.map(item => <option value={item.value} key={item.value} selected={value.includes(item.value)}>{item.name}</option>) }
+        <select className="ml-2" multiple value={value} onChange={e => selectChanged(e,onChange)} {...input} >
+            { options.map(item => <option value={item.value} key={item.value} > { item.name } </option>) }
         </select>
     </label>
 };
@@ -25,7 +25,7 @@ const FieldMultiSelect = ({ label = '', value=[], options = [], onChange ,...inp
 FieldMultiSelect.propTypes = {
     label : PropTypes.string,
     onChange : PropTypes.func,
-    value: PropTypes.string,
+    value: PropTypes.arrayOf(PropTypes.string),
     options: PropTypes.arrayOf(PropTypes.shape({
         value: PropTypes.string,
         name: PropTypes.string,
