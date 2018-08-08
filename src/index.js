@@ -9,6 +9,7 @@ import FieldRating from './FieldRating';
 import FieldTextarea from './FieldTextarea';
 import FieldRange from './FieldRange';
 import Field from './Field';
+import CheckIcon from './CheckIcon';
 
 export {
     FieldTextInput,
@@ -22,4 +23,5 @@ export {
     FieldRange,
     FieldMultiSelect,
     Field,
+    CheckIcon,
 }
