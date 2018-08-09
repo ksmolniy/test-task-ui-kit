@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const FieldRange = ({ label = '', value = 50, min = 0, max = 100, ...input}) => {
     return <label>

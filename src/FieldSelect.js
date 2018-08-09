@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const FieldSelect = ({ label = '', options = [], ...input }) => {
     return <label>
