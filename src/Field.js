@@ -7,7 +7,9 @@ const Field = ({ label = '', value = '' }) => {
         <div className="col-4">{label}</div>
         { 
             Array.isArray(value)
-                ? <div className="col-8" >{value.map(item => <div className="mb-2 border-bottom" key={item}>{item}</div>)}</div> 
+                ? value.length === 0 
+                    ? <div className="col-8 border-bottom" >Empty</div> 
+                    : <div className="col-8" >{value.map(item => <div className="mb-2 border-bottom" key={item}>{item}</div>)}</div> 
                 : <div className="col-8 border-bottom">
                     { typeof value === typeof true ? <CheckIcon checked={value} /> : value }
                 </div>
