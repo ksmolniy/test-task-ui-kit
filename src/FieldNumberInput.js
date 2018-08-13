@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FieldNumberInput = ({ label = '', ...input}) => {
+const FieldNumberInput = ({ label = '', onChange, ...input}) => {
     return <label>
         {label}
-        <input className="ml-2" {...input} type="number" />
+        <input className="ml-2" onChange={e=>onChange({target: { value: +e.target.value }})} {...input} type="number" />
     </label>
 };
 

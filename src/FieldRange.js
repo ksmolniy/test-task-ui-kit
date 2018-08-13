@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FieldRange = ({ label = '', value = 50, min = 0, max = 100, ...input}) => {
+const FieldRange = ({ label = '', value = 50, min = 0, max = 100, onChange, ...input}) => {
     return <label>
         {label}
-        <input className="ml-2" type="range" min={min} max={max} value={value} {...input} />
+        <input className="ml-2" type="range" min={min} max={max} value={value} onChange={e=>onChange({target: { value: +e.target.value }})} {...input} />
         {value}%
     </label>
 };
