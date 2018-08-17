@@ -1,0 +1,57 @@
+@import "~bem-kit/src/_all-mixins.scss"
+@import "~bem-kit/src/_all-rules.scss"
+@import "~bem-kit/src/_scss/helpers/_colors.scss"
+
+@import "../CustomMutliSelect/style.sass"
+@import "rating.scss"
+
+.o-
+    &form
+        &__group
+            @extend %form__group
+            width: 100%
+            margin-bottom: 0.75rem
+        &__label
+            @extend %form__label
+
+.c-
+    &input
+        @extend %textfield
+        &--shadow
+            @extend  %textfield--shadow
+
+    &select
+        @extend %select
+
+    &radio
+        @extend %radio
+        &--blue
+            @extend %radio--blue
+
+    &checkbox
+        @extend %checkbox
+        &:checked + label:after
+            width: 6px
+            height: 10px
+            top: 8px
+            left: 0px
+        &--blue
+            @extend %checkbox--blue
+    &rating
+        display: flex
+        width: 100%
+        &__star
+            margin-right: 8px
+            font-size: 24px
+            color: #0099e2
+            cursor: pointer
+            transition: color ease-out 0.2s
+            &--inactive
+                color: #cccdff
+    &textfield
+        @extend %textfield
+.u-
+    &m
+        &-r
+            &-auto
+                margin-right: auto

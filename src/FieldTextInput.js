@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FieldTextInput = ({ label = '', ...input}) => {
-    return <label>
-        {label}
-        <input className="ml-2" {...input} />
-    </label>
+    return <div className="o-form__group">
+        <div className="o-form__label">
+            {label}
+        </div>
+        <input className="c-input" {...input} />
+    </div>
 };
 
 FieldTextInput.propTypes = {

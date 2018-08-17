@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FieldSelect = ({ label = '', options = [], value, ...input }) => {
-    return <div className="d-flex">
-        {label}
-        <div className="ml-2 d-flex flex-column">
+const FieldSelect = ({ label = '', options = [], groupName, value, ...input }) => {
+    return <div className="o-form__group">
+        <div className="o-form__label">
+            {label}
+        </div>
+        <div className="u-display-flex u-w-100">
             { 
                 options.map(item => 
-                    <label key={item.value}>
-                        <input value={item.value} checked={value === item.value} type="radio" {...input} />
-                        {item.name}
-                    </label>
+                    <React.Fragment key={item.value}>
+                        <input id={`${groupName}-${item.value}}`} className="c-radio c-radio--blue" value={item.value} checked={value === item.value} type="radio" {...input} />
+                        <label htmlFor={`${groupName}-${item.value}}`}>
+                            {item.name}
+                        </label>
+                    </React.Fragment>
                 )
             }
         </div>
@@ -25,6 +29,7 @@ FieldSelect.propTypes = {
         value: PropTypes.string,
         name: PropTypes.string,
     })),
+    groupName: PropTypes.string.isRequired,
 }
 
 export default FieldSelect;

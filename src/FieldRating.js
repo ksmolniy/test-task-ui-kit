@@ -3,10 +3,10 @@ import Rating from './Rating';
 import PropTypes from 'prop-types';
 
 const FieldRating = ({ label = '', value = 0, max = 5, ...input }) => {
-    return <label className="d-flex">
-        {label}
-        <Rating max={max} value={value} {...input} />
-        </label>
+    return <div className="o-form__group">
+        <div className="o-form__label">{label} </div>
+            <Rating className="u-m-r-auto" max={max} value={value} {...input} />
+        </div>
 }
 
 FieldRating.propTypes = {

@@ -11,8 +11,10 @@
   "author": "Kirill Orlovskiy",
   "license": "ISC",
   "dependencies": {
+    "bem-kit": "0.0.8",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2"
+    "react": "^16.4.2",
+    "recompose": "0.28.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -22,6 +24,8 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   }

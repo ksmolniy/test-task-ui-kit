@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const starChar = '★';
 
-const Rating = ({ value, max, onChange }) => {
+const Rating = ({ value, max, onChange, className }) => {
     const changeRating = e => {
         const dataValue = +e.target.dataset.value;
         const returnedValue = value === dataValue ? value - 1 : dataValue;
@@ -16,7 +16,7 @@ const Rating = ({ value, max, onChange }) => {
         });
     };
 
-    return <div className="d-flex">
+    return <div className={`c-rating ${className}`}>
         {
             Array(max)
                 .fill(null)
@@ -24,7 +24,7 @@ const Rating = ({ value, max, onChange }) => {
                     <div
                         data-value={i+1}
                         key={i}
-                        className={`btn ${i > (value - 1) && 'text-muted'}`}
+                        className={`c-rating__star ${i > (value - 1) && 'c-rating__star--inactive'}`}
                         onClick={changeRating}
                     >
                         {starChar}

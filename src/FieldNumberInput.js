@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FieldNumberInput = ({ label = '', onChange, ...input}) => {
-    return <label>
-        {label}
-        <input className="ml-2" onChange={e=>onChange({target: { value: +e.target.value }})} {...input} type="number" />
-    </label>
+    return <div className="o-form__group">
+        <div className="o-form__label">
+            {label}
+        </div>
+        <input className="c-input" onChange={e=>onChange({target: { value: +e.target.value }})} {...input} type="number" />
+    </div>
 };
 
 FieldNumberInput.propTypes = {

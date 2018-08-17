@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CustomMutliSelect from './CustomMutliSelect';
 
 function selectChanged(e, onChange) {
     const checkedOptions = e.target.querySelectorAll('option:checked');
@@ -14,12 +15,10 @@ function selectChanged(e, onChange) {
 }
 
 const FieldMultiSelect = ({ label = '', value=[], options = [], onChange ,...input }) => {
-    return <label>
-        {label}
-        <select className="ml-2" multiple value={value} onChange={e => selectChanged(e,onChange)} {...input} >
-            { options.map(item => <option value={item.value} key={item.value} > { item.name } </option>) }
-        </select>
-    </label>
+    return <div className="o-form__group">
+        <div className="o-form__label">{label}</div>
+        <CustomMutliSelect multiple value={value} onChange={onChange} {...input} options={options} />
+    </div>
 };
 
 FieldMultiSelect.propTypes = {
